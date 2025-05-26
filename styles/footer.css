@@ -1,0 +1,36 @@
+/* =====================================
+ * Footer
+ * ===================================== */
+ footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.1rem;
+  background-color: black;
+}
+
+/* Social Media List */
+footer .socmed-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.3rem;
+  list-style: none;
+  padding: 0;
+}
+
+/* Social Media Icons */
+.socmed-list__social-icon {
+  --socmed-icons-size: 40px;
+
+  width: var(--socmed-icons-size);
+  height: var(--socmed-icons-size);
+}
+
+/* Copyright Text */
+.footer__copy-right-txt {
+  text-align: center;
+  width: 100%;
+}

@@ -1,0 +1,102 @@
+/* =====================================
+ * Root Variables
+ * ===================================== */
+ :root {
+  --main-color: rgb(255, 184, 0);
+  --primary-color: white;
+
+  --background-color-in-mobile-view: radial-gradient(
+    circle closest-side at 90% center,
+    #201e1c 0%,
+    #272322 100%,
+    #141414 200%,
+    #0a0a0a 500%
+  );
+
+  --background-color-in-desktop-view: radial-gradient(
+    circle closest-side at 71% center,
+    #080808 2%,
+    #090909 30%,
+    #070707 60%,
+    #000000 90%
+  );
+}
+
+/* =====================================
+ * Base Styles
+ * ===================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 3rem;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  color: var(--primary-color);
+  font-family: "Albert Sans", sans-serif;
+  background: var(--background-color-in-mobile-view);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* =====================================
+ * Layout Wrapper
+ * ===================================== */
+.main-wrapper {
+  --wrapper-max-width: 1180px;
+  --wrapper-padding: 2.4rem;
+
+  width: min(var(--wrapper-max-width), 100% - var(--wrapper-padding));
+  margin-inline: auto;
+  z-index: 10;
+}
+
+/* =====================================
+ * Section Styles
+ * ===================================== */
+section {
+  max-width: 600px;
+  padding-bottom: 180px;
+}
+
+section .heading {
+  font-size: 3rem;
+  color: var(--main-color);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-align: left;
+  line-height: 1em;
+}
+
+
+/* =====================================
+ * Responsive Styles
+ * ===================================== */
+@media (width >= 50rem) { /* 800px */
+  .main-wrapper {
+    --wrapper-padding: 15%;
+  }
+}
+
+@media (width >= 900px) {
+  body {
+    background: var(--background-color-in-desktop-view);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}

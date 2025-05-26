@@ -1,0 +1,98 @@
+/* =====================================
+ * Header Section Styles
+ * ===================================== */
+ header {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* Work status section inside header */
+.header__work-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0;
+  animation: work-status-start-animation 2s forwards;
+}
+
+@keyframes work-status-start-animation{
+  to{
+    opacity: 1;
+  }
+}
+
+/* Dot indicator for work status */
+.header__work-status-dot {
+  --dot-size: 8px;
+
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 30px;
+  background-color: rgb(255, 2, 2);
+  animation: not-active-pulse-shadow 1.5s infinite ease-in-out;
+}
+
+/* Active state of work status dot */
+.header__work-status-dot.active {
+  background-color: rgb(2, 255, 39);
+  animation: active-pulse-shadow 1.5s infinite ease-in-out;
+}
+
+/* Work status text label */
+.header__work-status-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Button for downloading resume */
+.header__download-resume-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(5, 5, 5);
+  background-color: var(--main-color);
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  opacity: 0;
+  animation: resume-btn-start-animation 2s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes resume-btn-start-animation{
+  to{
+    opacity: 1;
+  }
+}
+
+/* =====================================
+ * Responsive Styles for Small Screens
+ * ===================================== */
+@media (width >= 22.6875rem) { /* 363px */
+  .header__download-resume-btn {
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* =====================================
+ * Work Status Dot Pulse Animations
+ * ===================================== */
+@keyframes active-pulse-shadow {
+  0%, 100% {
+    box-shadow: 0 0 10px 2px rgba(0, 255, 136, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(0, 255, 136, 0.2);
+  }
+}
+
+@keyframes not-active-pulse-shadow {
+  0%, 100% {
+    box-shadow: 0 0 10px 2px rgba(255, 77, 77, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 77, 77, 0.2);
+  }
+}
